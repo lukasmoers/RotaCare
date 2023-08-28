@@ -1,0 +1,71 @@
+{% extends 'rota/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Register
+{% endblock %}
+
+{% block body_block %}
+    <div class="container py-2 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-3 text-left">
+                        <h3 class="mb-5">Register</h3>
+                        <form id="user_form" method="post" action="{% url 'rota:register' %}">
+                            {% csrf_token %}
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Username: </span>
+                                <input type="text" class="form-control" name="username" value="" aria-label="username" aria-describedby="basic-addon1 " >
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">E-Mail: </span>
+                                <input type="text" class="form-control" name="email" value="" aria-label="email" aria-describedby="basic-addon1 " >
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Password: </span>
+                                <input type="password" class="form-control" name="password" value="" aria-label="password" aria-describedby="basic-addon1 " >
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">First Name: </span>
+                                <input type="text" class="form-control" name="first_name" value="" maxlength="40" id="first_name"aria-label="first_name" aria-describedby="basic-addon1" >
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Last Name: </span>
+                                <input type="text" class="form-control" name="last_name" value="" maxlength="40" id="last_name"aria-label="last_name" aria-describedby="basic-addon1" >
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="job_title">Job Title: </label>
+                                <select class="form-select" id="job_title" name="job_title">
+                                    <option selected>Choose...</option>
+                                    <option value="Healthcare Support Worker">Healthcare Support Worker</option>
+                                    <option value="Staff Nurse">Staff Nurse</option>
+                                    <option value="Charge Nurse">Charge Nurse</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Phone Number: </span>
+                                <input type="text" class="form-control" name="phone_number" value="" maxlength="15" id="phone_number" aria-label="phone_number" aria-describedby="basic-addon1" >
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Ward: </span>
+                                <input type="text" class="form-control" name="ward" value="" maxlength="40" id="ward" aria-label="ward" aria-describedby="basic-addon1" >
+                            </div>
+
+                            <button class="btn btn-primary btn-lg btn-block text-white" type="submit" value="Register">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
